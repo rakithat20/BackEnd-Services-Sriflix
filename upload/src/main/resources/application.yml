@@ -1,0 +1,21 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAW3MD66Y7PUHLQBC4
+      secret-key: 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
+    region:
+      static: ap-southeast-1
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: moviestorage
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
